@@ -32,3 +32,16 @@ def signup():
 
 	users.append(user_data)
 	return jsonify({"message":"you have successfully signed in."}),201
+
+@app.route('/api/v1/auth/login', methods=['POST'])
+def logIn():
+	user_data = request.get_json()
+	email=user_data.get('email')
+	password=user_data.get('password')
+	if not email or email == " ":
+		return jsonify({'message':'email is required'}), 400
+	if not password or password == " " or len(password)< 8:
+		return jsonify({'message':'password is required'}), 400
+	users.append(user_data)
+	return jsonify({"message":"you have successfully logged in."}),201
+
