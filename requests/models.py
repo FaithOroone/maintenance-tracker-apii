@@ -1,6 +1,7 @@
 class Requests:
     def __init__(self,name, category, request_type, description, department, status):
         self.name = name
+        self.user_id = user_id
         self.category = category
         self.request_type = request_type
         self.description = description
@@ -9,6 +10,9 @@ class Requests:
 
     def get_name(self):
         return self.name
+
+    def get_user_id(self):
+        return self.user_id
 
     def get_category(self):
         return self.category

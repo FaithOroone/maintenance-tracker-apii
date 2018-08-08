@@ -1,4 +1,4 @@
-from requests.views import app
+from users.views import app
 import unittest
 import json
 from unittest import TestCase
@@ -8,6 +8,7 @@ class Test(TestCase):
         self.app = app.test_client()
         self.request_data ={
             "name":"faith",
+            "request_id:"12345"
             "category":"chair",
             "request_type":"repair",
             "description":"replace a broken chair",
